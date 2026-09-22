@@ -35,11 +35,11 @@
                   </p>
                 </a>                
               </li>
-              <li class="nav-header">PRODUTOS</li>
+              <li class="nav-header">Serviços</li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon bi bi-circle-fill"></i>
-                  <p>Produtos</p>
+                  <p>Serviços</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -48,11 +48,11 @@
                   <p>Categorias</p>
                 </a> 
               </li>
-              <li class="nav-header">VENDAS</li>
+              <li class="nav-header">Equipamentos</li>
                 <li class="nav-item">
                   <a href="#" class="nav-link">
                     <i class="nav-icon bi bi-circle-fill"></i>
-                    <p>Vendas</p>
+                    <p>Equipamentos</p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -90,20 +90,8 @@
                   </p>
                 </a>                
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-circle-fill"></i>
-                  <p>Linha do tempo</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-circle-fill"></i>
-                  <p>
-                    Newsletter                    
-                  </p>
-                </a>                
-              </li>              
+
+                        
             </ul>
             <!--end::Sidebar Menu-->
 
