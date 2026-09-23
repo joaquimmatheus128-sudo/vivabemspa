@@ -1,4 +1,3 @@
-  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Área administrativa</title>
 
@@ -118,4 +117,3 @@
     />
     
     <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}" />
-  </head>
