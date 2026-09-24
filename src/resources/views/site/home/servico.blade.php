@@ -4,12 +4,20 @@
     </header>
 
     <div class="site carrossel-serv wow animate__animated animate__fadeInUp">
-        <?php foreach ($servicos as $servicoItem): ?>
+        @foreach ($listaServico as $servicoItem)
             <article>
-                <a class="servico-card-link" href="<?php echo htmlspecialchars($servicoItem['arquivo']); ?>" aria-label="Abrir serviço <?php echo htmlspecialchars($servicoItem['nome']); ?>">
-                    <img src="<?php echo htmlspecialchars($servicoItem['imagem_card']); ?>" alt="<?php echo htmlspecialchars($servicoItem['nome']); ?>">
+                <a class="servico-card-link" 
+                   href="{{ route('servico.show', $servicoItem->id_servico) }}" 
+                   aria-label="Abrir serviço {{ $servicoItem->nome_servico }}">
+                    
+                    <img src="{{ asset('vivabem-spa/assets/' . $servicoItem->imagem_servico) }}" 
+                         alt="{{ $servicoItem->nome_servico }}">
+                    
+                    <span class="servico-card-titulo">
+                        {{ $servicoItem->nome_servico }}
+                    </span>
                 </a>
             </article>
-        <?php endforeach; ?>
+        @endforeach
     </div>
 </section>
