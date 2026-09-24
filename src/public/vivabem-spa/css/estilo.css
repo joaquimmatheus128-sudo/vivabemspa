@@ -330,86 +330,102 @@ p{
   }
 
 /* SERVIÇOS */
-.servico header{
+.servico header {
   display: flex;
   text-align: center;
   flex-direction: column;
   justify-content: center;
 }
 
-.servico .carrossel-serv{
+.servico .carrossel-serv {
   margin-top: 50px;
   text-align: center;
 }
 
-.servico .carrossel-serv img{
-  width: 230px;
-  height: 200px;
-  display: inline-block;
-  vertical-align: middle;
+/* Força os slides do carrossel a não terem fundos ou paddings extras */
+.servico .carrossel-serv .slick-slide {
+  padding: 10px 15px; /* Espaçamento lateral entre os cards */
+  box-sizing: border-box;
+  background: transparent !important;
 }
 
-.servico-card-link{
-  display: inline-block;
-  line-height: 0;
+/* Card do Serviço */
+.servico-card-link {
+  display: block;
+  width: 100%;
+  max-width: 230px;    /* Largura do card */
+  height: 200px;       /* Altura fixa do card */
+  margin: 0 auto;
   position: relative;
-  overflow: hidden;
+  overflow: hidden;    /* Arredonda tudo e esconde sobras */
   border-radius: 18px;
   text-decoration: none;
+  background-color: transparent;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.servico-card-link::after{
+/* Imagem preenchendo 100% da caixa sem sobras */
+.servico .carrossel-serv img,
+.servico-card-link img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* Estica proporcionalmente cobrindo toda a área */
+  object-position: center !important;
+  border-radius: 18px;
+  display: block;
+  margin: 0 !important;
+}
+
+.servico-card-link::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(82, 89, 30, 0.28), rgba(82, 89, 30, 0));
   opacity: 0;
   transition: opacity 0.25s ease;
+  border-radius: 18px;
+  pointer-events: none;
 }
 
 .servico-card-link:hover,
-.servico-card-link:focus-visible{
+.servico-card-link:focus-visible {
   transform: translateY(-6px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .servico-card-link:hover::after,
-.servico-card-link:focus-visible::after{
+.servico-card-link:focus-visible::after {
   opacity: 1;
 }
 
-.servico-card-link img{
-  display: block;
+/* Pílula com o Nome do Serviço */
+.servico-card-titulo {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    font-size: 0.9rem;
+    
+    padding: 6px 18px;
+    border-radius: 50px;
+    border: 1px solid var(--cor-secundaria);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    
+    white-space: nowrap;
+    text-align: center;
+    pointer-events: none;
+    z-index: 2;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.carrossel-serv{
-  margin: 0 auto;
-}
-
-.carrossel-serv .slick-prev:before,
-.carrossel-serv .slick-next:before
-{
-  font-size: 23px;
-  color: var(--cor-primaria);
-}
-.carrossel-serv .slick-prev
-{
-  left: -25px;
-  z-index: 2;
-  transition: transform 0.25s ease;
-}
-.carrossel-serv .slick-next
-{
-  right: -25px;
-  z-index: 2;
-  transition: transform 0.25s ease;
-}
-
-.carrossel-serv .slick-prev:hover,
-.carrossel-serv .slick-next:hover
-{
-  transform: translateY(-13px) scale(1.12);
+.servico-card-link:hover .servico-card-titulo {
+    background-color: var(--cor-secundaria);
+    transform: translateX(-50%) scale(1.04);
 }
 
 /* EVENTOS */
@@ -2202,4 +2218,48 @@ p{
 
 .cadastro-termos input {
   margin-top: 2px;
+}
+
+/* Container do card com cantos arredondados */
+.servico-card-link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 20px; /* Cantos arredondados do card de imagem */
+}
+
+.servico-card-link img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
+
+/* Pílula estilizada com o nome do serviço */
+.servico-card-titulo {
+    position: absolute;
+    bottom: 20px; /* Distância do fundo da imagem */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza a pílula horizontalmente */
+    
+    background-color: #8c9e3e; /* Tom de verde do teu design */
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    
+    padding: 8px 24px;
+    border-radius: 50px; /* Formato de pílula arredondada */
+    border: 1px solid #5d6b27; /* Borda mais escura de contorno */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    
+    white-space: nowrap;
+    text-align: center;
+    pointer-events: none; /* Garante que o clique vai para o link <a> */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efeito ao passar o rato (Hover) */
+.servico-card-link:hover .servico-card-titulo {
+    background-color: #798a33;
+    transform: translateX(-50%) scale(1.05); /* Ligeiro destaque */
 }
