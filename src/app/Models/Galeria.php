@@ -17,6 +17,7 @@ Class Galeria extends Model{
         'nome_galeria',
         'imagem_galeria',
         'categoria_galeria',
-        'status_galeria'
+        'status_galeria',
+        'descricao_galeria'
     ];
 }
