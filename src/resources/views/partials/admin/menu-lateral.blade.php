@@ -56,7 +56,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.cliente.index') }}" class="nav-link">
                     <i class="nav-icon bi bi-circle-fill"></i>
                     <p class="text">Clientes</p>
                   </a>
@@ -83,10 +83,10 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.depoimento.index') }}" class="nav-link">
                   <i class="nav-icon bi bi-circle-fill"></i>
                   <p>
-                    Depoimentos                    
+                    Depoimentos
                   </p>
                 </a>                
               </li>

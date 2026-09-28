@@ -22,6 +22,8 @@ Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.das
 Route::get('/contato', [ContatoController::class, 'contato'])->name('contato');
 
 Route::get('/dashboard/categorias', [AdminController::class, 'categoria'])->name('admin.categoria.index');
+Route::get('/dashboard/depoimentos', [AdminController::class, 'depoimentos'])->name('admin.depoimento.index');
+Route::get('/dashboard/clientes', [AdminController::class, 'clientes'])->name('admin.cliente.index');
 
 // URLs sem página própria exibem a página inicial.
 Route::fallback([HomeController::class, 'index']);
