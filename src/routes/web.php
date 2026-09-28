@@ -25,3 +25,5 @@ Route::get('/dashboard/categorias', [AdminController::class, 'categoria'])->name
 
 // URLs sem página própria exibem a página inicial.
 Route::fallback([HomeController::class, 'index']);
+
+Route::get('/galeria/{id}', [HomeController::class, 'galeriaShow'])->name('imagem_galeria');
