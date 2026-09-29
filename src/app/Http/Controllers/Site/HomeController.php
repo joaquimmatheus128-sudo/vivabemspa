@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\Models\Servico;
+use App\Models\Galeria;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\DB;
 
@@ -10,6 +11,9 @@ class HomeController extends Controller
 {
     public function index(): View
     {
+        $listaGaleria = Galeria::where('status_galeria', 'ATIVO')->get();
+
+
         // Vai buscar os serviços ativos para mandar para o carrossel da Home
         $listaServico = Servico::where('status_servico', 'ATIVO')->get();
         $depoimentos = DB::connection('mysql')->table('tbl_depoimento')
@@ -24,6 +28,14 @@ class HomeController extends Controller
             ->orderByDesc('tbl_depoimento.data_criacao')
             ->get();
 
-        return view('site.home.home', compact('listaServico', 'depoimentos'));
+        $eventos = DB::connection('mysql')->table('tbl_evento')
+            ->leftJoin('tbl_categoria', 'tbl_evento.id_categoria', '=', 'tbl_categoria.id_categoria')
+            ->where('tbl_evento.status_evento', 'ATIVO')
+            ->select('tbl_evento.*', 'tbl_categoria.nome_categoria')
+            ->orderBy('tbl_evento.data_evento')
+            ->orderBy('tbl_evento.horario_evento')
+            ->get();
+
+        return view('site.home.home', compact('listaServico', 'depoimentos', 'listaGaleria', 'eventos'));
     }
 }
