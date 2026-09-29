@@ -86,7 +86,7 @@
                             <th>ID</th>
                             <th>NOME</th>
                             <th>STATUS</th>
-                            <th class="text-end">AÇÕES</th>
+                            <th>PREÇO</th>
                           </tr>
                         </thead>
                         <tbody>
