@@ -25,6 +25,16 @@ Route::get('/dashboard/categorias', [AdminController::class, 'categoria'])->name
 Route::get('/dashboard/depoimentos', [AdminController::class, 'depoimentos'])->name('admin.depoimento.index');
 Route::get('/dashboard/clientes', [AdminController::class, 'clientes'])->name('admin.cliente.index');
 
+Route::get('/dashboard/equipamentos', [AdminController::class, 'equipamento'])->name('admin.equipamento.index');
+Route::post('/dashboard/equipamentos', [AdminController::class, 'equipamentoStore'])->name('admin.equipamento.store');
+Route::put('/dashboard/equipamentos/{id}', [AdminController::class, 'equipamentoUpdate'])->name('admin.equipamento.update');
+Route::delete('/dashboard/equipamentos/{id}', [AdminController::class, 'equipamentoDestroy'])->name('admin.equipamento.destroy');
+
+Route::get('/dashboard/galeria', [AdminController::class, 'galeria'])->name('admin.galeria.index');
+Route::post('/dashboard/galeria', [AdminController::class, 'galeriaStore'])->name('admin.galeria.store');
+Route::put('/dashboard/galeria/{id}', [AdminController::class, 'galeriaUpdate'])->name('admin.galeria.update');
+Route::delete('/dashboard/galeria/{id}', [AdminController::class, 'galeriaDestroy'])->name('admin.galeria.destroy');
+
 // URLs sem página própria exibem a página inicial.
 Route::fallback([HomeController::class, 'index']);
 
