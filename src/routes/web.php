@@ -27,3 +27,5 @@ Route::get('/dashboard/clientes', [AdminController::class, 'clientes'])->name('a
 
 // URLs sem página própria exibem a página inicial.
 Route::fallback([HomeController::class, 'index']);
+
+Route::get('/galeria/{id}', [HomeController::class, 'galeriaShow'])->name('imagem_galeria');
