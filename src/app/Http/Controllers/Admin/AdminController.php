@@ -3,12 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Categoria;
-<<<<<<< HEAD
-=======
 use App\Models\Equipamento;
 use App\Models\Galeria;
->>>>>>> origin/main
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
