@@ -24,6 +24,11 @@ Route::get('/contato', [ContatoController::class, 'contato'])->name('contato');
 Route::get('/dashboard/categorias', [AdminController::class, 'categoria'])->name('admin.categoria.index');
 Route::get('/dashboard/depoimentos', [AdminController::class, 'depoimentos'])->name('admin.depoimento.index');
 Route::get('/dashboard/clientes', [AdminController::class, 'clientes'])->name('admin.cliente.index');
+Route::get('/dashboard/especialistas', [AdminController::class, 'especialistas'])->name('admin.especialista.index');
+Route::put('/dashboard/especialistas/{id}', [AdminController::class, 'atualizarEspecialista'])->name('admin.especialista.update');
+Route::delete('/dashboard/especialistas/{id}', [AdminController::class, 'removerEspecialista'])->name('admin.especialista.destroy');
+Route::get('/dashboard/eventos', [AdminController::class, 'eventos'])->name('admin.evento.index');
+Route::post('/dashboard/eventos', [AdminController::class, 'criarEvento'])->name('admin.evento.store');
 
 Route::get('/dashboard/equipamentos', [AdminController::class, 'equipamento'])->name('admin.equipamento.index');
 Route::post('/dashboard/equipamentos', [AdminController::class, 'equipamentoStore'])->name('admin.equipamento.store');

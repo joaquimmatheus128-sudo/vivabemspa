@@ -62,6 +62,12 @@
                   </a>
                 </li>
                 <li class="nav-item">
+                <a href="{{ route('admin.especialista.index') }}" class="nav-link">
+                    <i class="nav-icon bi bi-circle-fill"></i>
+                    <p class="text">Especialistas</p>
+                  </a>
+                </li>
+                <li class="nav-item">
                 <a href="#" class="nav-link">
                     <i class="nav-icon bi bi-circle-fill"></i>
                     <p class="text">Usuários</p>
@@ -77,7 +83,17 @@
                 </a>                
               </li>
               <li class="nav-item">
+<<<<<<< HEAD
+                <a href="{{ route('admin.evento.index') }}" class="nav-link">
+                  <i class="nav-icon bi bi-calendar-event"></i>
+                  <p>Eventos</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+=======
                 <a href="{{ route('admin.galeria.index') }}" class="nav-link">
+>>>>>>> origin/main
                   <i class="nav-icon bi bi-circle-fill"></i>
                   <p>Galeria</p>
                 </a>
