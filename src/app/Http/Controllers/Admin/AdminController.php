@@ -4,11 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Categoria;
-<<<<<<< HEAD
-=======
 use App\Models\Equipamento;
 use App\Models\Galeria;
->>>>>>> origin/main
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -179,6 +176,8 @@ class AdminController extends Controller
         $imagem->move(public_path('vivabem-spa/assets/galeria'), $nomeArquivo);
 
         return 'galeria/' . $nomeArquivo;
+    }
+
     public function depoimentos()
     {
         $depoimentos = DB::connection('mysql')->table('tbl_depoimento')

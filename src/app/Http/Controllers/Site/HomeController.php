@@ -28,7 +28,6 @@ class HomeController extends Controller
             ->orderByDesc('tbl_depoimento.data_criacao')
             ->get();
 
-<<<<<<< HEAD
         $eventos = DB::connection('mysql')->table('tbl_evento')
             ->leftJoin('tbl_categoria', 'tbl_evento.id_categoria', '=', 'tbl_categoria.id_categoria')
             ->where('tbl_evento.status_evento', 'ATIVO')
@@ -38,8 +37,5 @@ class HomeController extends Controller
             ->get();
 
         return view('site.home.home', compact('listaServico', 'depoimentos', 'listaGaleria', 'eventos'));
-=======
-        return view('site.home.home', compact('listaServico', 'depoimentos', 'listaGaleria'));
->>>>>>> origin/main
     }
 }
