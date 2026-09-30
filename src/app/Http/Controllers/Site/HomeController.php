@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use App\Models\Servico;
 use App\Models\Galeria;
-use App\Models\Eventos;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -16,7 +16,29 @@ class HomeController extends Controller
         // Vai buscar os serviços ativos para mandar para o carrossel da Home
         $listaServico = Servico::where('status_servico', 'ATIVO')->get();
 
-        $listaEventos = Eventos:: get();
-        return view('site.home.home', compact('listaServico', 'listaGaleria', 'listaEventos'));
+        // Busca os depoimentos aprovados
+        $depoimentos = DB::connection('mysql')->table('tbl_depoimento')
+            ->leftJoin('tbl_cliente', 'tbl_depoimento.id_cliente', '=', 'tbl_cliente.id_cliente')
+            ->where('tbl_depoimento.status_depoimento', 'APROVADO')
+            ->select([
+                'tbl_depoimento.titulo_depoimento',
+                'tbl_depoimento.descricao_depoimento',
+                'tbl_depoimento.nota_depoimento',
+                'tbl_cliente.nome_cliente',
+            ])
+            ->orderByDesc('tbl_depoimento.data_criacao')
+            ->get();
+
+        // Busca os eventos ativos (nomeado exatamente como $eventos)
+        $eventos = DB::connection('mysql')->table('tbl_evento')
+            ->leftJoin('tbl_categoria', 'tbl_evento.id_categoria', '=', 'tbl_categoria.id_categoria')
+            ->where('tbl_evento.status_evento', 'ATIVO')
+            ->select('tbl_evento.*', 'tbl_categoria.nome_categoria')
+            ->orderBy('tbl_evento.data_evento')
+            ->orderBy('tbl_evento.horario_evento')
+            ->get();
+
+        // Retorna a view no FINAL com todas as variáveis necessárias
+        return view('site.home.home', compact('listaServico', 'listaGaleria', 'depoimentos', 'eventos'));
     }
 }

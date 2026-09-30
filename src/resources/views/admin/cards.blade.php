@@ -123,4 +123,15 @@
                 <!--end::Small Box Widget 4-->
               </div>
               <!--end::Col-->
+              <div class="col-lg-3 col-6">
+                <div class="small-box text-bg-info">
+                  <div class="inner">
+                    <h3>{{ $totalEspecialistas ?? 0 }}</h3>
+                    <p>Especialistas</p>
+                  </div>
+                  <a href="{{ route('admin.especialista.index') }}" class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
+                    Ver especialistas <i class="bi bi-link-45deg"></i>
+                  </a>
+                </div>
+              </div>
             </div>
