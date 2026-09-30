@@ -179,6 +179,8 @@ class AdminController extends Controller
         $imagem->move(public_path('vivabem-spa/assets/galeria'), $nomeArquivo);
 
         return 'galeria/' . $nomeArquivo;
+    }
+
     public function depoimentos()
     {
         $depoimentos = DB::connection('mysql')->table('tbl_depoimento')
