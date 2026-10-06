@@ -1,3 +1,26 @@
+
+:root{
+  /* CORES */
+
+  --cor-fundo-1: #6c6a6a;
+  --cor-fundo-2: #9aa63f;
+  --cor-fundo-3: #52591e;
+  --cor-primaria: #9aa63f;
+  --cor-secundaria: #52591e;
+  --cor-secundaria2: #d4d9b0;
+  --cor-texto: #d8f870;
+  --cor-texto2: #d4d9b0;
+  --cor-titulo: #d4d9b0;
+  --cor-titulo2: #52591e;
+  --cor-subtitulo: #f2f2f2;
+  --cor-subtitulo2: #9aa63f;
+
+  /* FONTES */
+
+  --fonte-texto: "Cormorant Garamond";
+  --fonte-titulo: "Quicksand";
+}
+
 /* BANNER */
 .banner-upload {
     position: relative;
@@ -161,7 +184,7 @@
     width: 100%;
     max-width: 420px;
 
-    background: #f4e9da;
+    background: var(--cor-secundaria2);
 
     border-radius: 8px;
 
@@ -195,7 +218,7 @@
 .login-header h1 {
     margin: 0 0 8px;
 
-    color: #4b2b1b;
+    color: var(--cor-titulo2);
 
     font-size: 28px;
 }
@@ -204,7 +227,7 @@
 .login-header p {
     margin: 0;
 
-    color: #866046;
+    color: var(--cor-subtitulo2);
 
     font-size: 14px;
 }
@@ -220,7 +243,7 @@
 
     margin-bottom: 7px;
 
-    color: #4b2b1b;
+    color: var(--cor-titulo2);
 
     font-weight: 600;
 
@@ -235,7 +258,7 @@
 
     padding: 13px 15px;
 
-    border: 1px solid #c6a386;
+    border: 1px solid var(--cor-secundaria);
 
     border-radius: 5px;
 
@@ -248,17 +271,17 @@
 
 
 .login-group input:focus {
-    border-color: #bd692d;
+    border-color: var(--cor-secundaria);
 
     box-shadow:
-        0 0 0 3px rgba(189, 105, 45, 0.12);
+        0 0 0 3px #2f331154;
 }
 
 
 .login-options {
     margin-bottom: 22px;
 
-    color: #745039;
+    color: var(--cor-subtitulo2);
 
     font-size: 13px;
 }
@@ -273,7 +296,7 @@
 
     border-radius: 5px;
 
-    background: #b9692e;
+    background: var(--cor-secundaria);
 
     color: #fff;
 
@@ -288,7 +311,7 @@
 
 
 .login-button:hover {
-    background: #935126;
+    background: var(--cor-secundaria);
 }
 
 
@@ -324,7 +347,7 @@
 
     text-align: center;
 
-    color: #76523a;
+    color: var(--cor-titulo2);
 }
 
 

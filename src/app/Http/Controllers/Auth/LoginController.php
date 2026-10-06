@@ -27,19 +27,23 @@ public function index()
             'password.required' => 'Informe sua senha.',
         ]);
 
-        // 2 - Tentar autenticar
-        if (Auth::attempt([
-            'email_usuarios' => $dados['email'],
-            'password' => $dados['password'],
-            'status_usuarios' => 'ATIVO',
-        ])) {
+        // Procura o utilizador pelo e-mail e status ativo
+        $usuario = \App\Models\Usuario::where('email_usuario', $dados['email'])
+                                      ->where('status_usuario', 'ATIVO')
+                                      ->first();
+
+        // Verifica se o utilizador existe e se a senha confere (texto plano)
+        if ($usuario && $dados['password'] === $usuario->senha_usuario) {
+
+            // Faz o login manual no sistema
+            Auth::login($usuario);
 
             // Segurança: cria uma nova sessão
             $request->session()->regenerate();
 
-            // Redireciona para o dashboard com o nome de rota correto
+            // Redireciona para o dashboard
             return redirect()->intended(route('admin.dashboard'));
-        } // <--- FALTAVA ESTA CHAVETA AQUI
+        }
 
         // 3 - Login inválido
         return back()

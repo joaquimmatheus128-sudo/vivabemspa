@@ -20,8 +20,6 @@ Route::get('/servico', [ServicoController::class, 'servico'])->name('servico');
 // Detalhe de cada serviço dinâmico (ex: /servico/shiatsu)
 Route::get('/servico/{id}', [ServicoController::class, 'show'])->name('servico.show');
 
-Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-
 Route::get('/contato', [ContatoController::class, 'contato'])->name('contato');
 
 Route::get('/dashboard/categorias', [AdminController::class, 'categoria'])->name('admin.categoria.index');
@@ -60,8 +58,7 @@ Route::get('/galeria/{id}', [HomeController::class, 'galeriaShow'])->name('image
 Route::middleware('guest')->group(function () {
 
     // Exibir tela de login
-    Route::get('/login', [LoginController::class, 'index'])
-        ->name('login');
+    Route::get('/login', [LoginController::class, 'login'])->name('login');
 
     // Processar login
     Route::post('/login', [LoginController::class, 'login'])
@@ -114,4 +111,3 @@ Route::middleware('auth')->group(function () {
     });
 
 });
-
