@@ -26,8 +26,8 @@
             <div class="login-logo">
 
                 <img
-                    src="{{ asset('barista/assets/logo-casa-do-barista.svg') }}"
-                    alt="Casa do Barista"
+                    src="{{ asset('vivabem-spa/assets/logo.png') }}"
+                    alt="Vivabemspa"
                 >
 
             </div>
